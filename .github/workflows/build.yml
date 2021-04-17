@@ -25,8 +25,18 @@ jobs:
         run: docker pull kalilinux/kali-rolling
       - name: Build docker image
         run: docker build -t "kalilinuxbuilder:latest" .
-      - name: Run docker image
-        run: docker run kalilinuxbuilder
+#       - name: Run docker image
+#         run: docker run kalilinuxbuilder
+      - name: Start docker container
+        run: |
+          docker start test_container
+          docker ps
+      - name: Execute the command
+        run: docker exec test_container run.sh
+      - name: Stop container
+        run: |
+          docker stop test_container
+          docker ps -a
 #       - name: Build file
 #         run: sh ./run.sh
 #       - name: Upload a Build Artifact
