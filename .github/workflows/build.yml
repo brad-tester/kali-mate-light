@@ -22,7 +22,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Build file
-        run: ./run.sh
+        run: sh ./run.sh
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.3
         with:
