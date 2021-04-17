@@ -29,13 +29,14 @@ jobs:
 #         run: docker run kalilinuxbuilder
       - name: Start docker container
         run: |
-          docker start test_container
+          docker create kalilinuxbuilder
+          docker start kalilinuxbuilder
           docker ps
       - name: Execute the command
         run: docker exec test_container run.sh
       - name: Stop container
         run: |
-          docker stop test_container
+          docker stop kalilinuxbuilder
           docker ps -a
 #       - name: Build file
 #         run: sh ./run.sh
