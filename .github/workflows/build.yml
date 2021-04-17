@@ -24,7 +24,7 @@ jobs:
       - name: Pull kali-linux image
         run: docker pull kalilinux/kali-rolling
       - name: Build docker image
-        run: docker build -t "kalilinuxbuilder:Dockerfile" .
+        run: docker build -t "kalilinuxbuilder:latest" .
       - name: Run docker image
         run: docker run kalilinuxbuilder
 #       - name: Build file
